@@ -1,0 +1,1841 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "FreshService Connector",
+    "description": "With this connector you can call the ticket part of your FreshService portal.",
+    "version": "1.0"
+  },
+  "host": "COMPANYNAME.freshservice.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/api/v2/agents": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "agents": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "id"
+                      },
+                      "first_name": {
+                        "type": "string",
+                        "description": "first_name"
+                      },
+                      "last_name": {
+                        "type": "string",
+                        "description": "last_name"
+                      },
+                      "occasional": {
+                        "type": "boolean",
+                        "description": "occasional"
+                      },
+                      "active": {
+                        "type": "boolean",
+                        "description": "active"
+                      },
+                      "job_title": {
+                        "type": "string",
+                        "description": "job_title"
+                      },
+                      "email": {
+                        "type": "string",
+                        "description": "email"
+                      },
+                      "work_phone_number": {
+                        "type": "string",
+                        "description": "work_phone_number"
+                      },
+                      "mobile_phone_number": {
+                        "type": "string",
+                        "description": "mobile_phone_number"
+                      },
+                      "department_ids": {
+                        "type": "array",
+                        "items": {
+                          "type": "integer",
+                          "format": "int32"
+                        },
+                        "description": "department_ids"
+                      },
+                      "can_see_all_tickets_from_associated_departments": {
+                        "type": "boolean",
+                        "description": "can_see_all_tickets_from_associated_departments"
+                      },
+                      "reporting_manager_id": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "reporting_manager_id"
+                      },
+                      "address": {
+                        "type": "string",
+                        "description": "address"
+                      },
+                      "time_zone": {
+                        "type": "string",
+                        "description": "time_zone"
+                      },
+                      "time_format": {
+                        "type": "string",
+                        "description": "time_format"
+                      },
+                      "language": {
+                        "type": "string",
+                        "description": "language"
+                      },
+                      "location_id": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "location_id"
+                      },
+                      "background_information": {
+                        "type": "string",
+                        "description": "background_information"
+                      },
+                      "scoreboard_level_id": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "scoreboard_level_id"
+                      },
+                      "scopes": {
+                        "type": "object",
+                        "properties": {
+                          "ticket": {
+                            "type": "string",
+                            "description": "ticket"
+                          },
+                          "problem": {
+                            "type": "string",
+                            "description": "problem"
+                          }
+                        },
+                        "description": "scopes"
+                      },
+                      "group_ids": {
+                        "type": "array",
+                        "items": {
+                          "type": "integer",
+                          "format": "int32"
+                        },
+                        "description": "group_ids"
+                      },
+                      "member_of": {
+                        "type": "array",
+                        "items": {
+                          "type": "integer",
+                          "format": "int32"
+                        },
+                        "description": "member_of"
+                      },
+                      "observer_of": {
+                        "type": "array",
+                        "items": {
+                          "type": "integer",
+                          "format": "int32"
+                        },
+                        "description": "observer_of"
+                      },
+                      "member_of_pending_approval": {
+                        "type": "array",
+                        "items": {},
+                        "description": "member_of_pending_approval"
+                      },
+                      "observer_of_pending_approval": {
+                        "type": "array",
+                        "items": {},
+                        "description": "observer_of_pending_approval"
+                      },
+                      "role_ids": {
+                        "type": "array",
+                        "items": {
+                          "type": "integer",
+                          "format": "int32"
+                        },
+                        "description": "role_ids"
+                      },
+                      "roles": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "role_id": {
+                              "type": "integer",
+                              "format": "int32",
+                              "description": "role_id"
+                            },
+                            "assignment_scope": {
+                              "type": "string",
+                              "description": "assignment_scope"
+                            },
+                            "groups": {
+                              "type": "array",
+                              "items": {
+                                "type": "integer",
+                                "format": "int32"
+                              },
+                              "description": "groups"
+                            }
+                          }
+                        },
+                        "description": "roles"
+                      },
+                      "last_login_at": {
+                        "type": "string",
+                        "description": "last_login_at"
+                      },
+                      "last_active_at": {
+                        "type": "string",
+                        "description": "last_active_at"
+                      },
+                      "custom_fields": {
+                        "type": "object",
+                        "properties": {
+                          "house": {
+                            "type": "string",
+                            "description": "house"
+                          }
+                        },
+                        "description": "custom_fields"
+                      },
+                      "has_logged_in": {
+                        "type": "boolean",
+                        "description": "has_logged_in"
+                      }
+                    }
+                  },
+                  "description": "agents"
+                }
+              }
+            }
+          }
+        },
+        "summary": "List Agents",
+        "parameters": [],
+        "operationId": "agents-list"
+      }
+    },
+    "/api/v2/agents/{agent}": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        },
+        "summary": "Get Agent",
+        "operationId": "agents-get",
+        "parameters": [
+          {
+            "name": "agent",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "Agent ID",
+            "x-ms-dynamic-values": {
+              "operationId": "agents-list",
+              "value-path": "id",
+              "value-collection": "agents",
+              "value-title": "email"
+            },
+            "format": "int32"
+          }
+        ]
+      }
+    },
+    "/api/v2/requesters": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "requesters": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "id"
+                      },
+                      "is_agent": {
+                        "type": "boolean",
+                        "description": "is_agent"
+                      },
+                      "first_name": {
+                        "type": "string",
+                        "description": "first_name"
+                      },
+                      "last_name": {
+                        "type": "string",
+                        "description": "last_name"
+                      },
+                      "job_title": {
+                        "type": "string",
+                        "description": "job_title"
+                      },
+                      "primary_email": {
+                        "type": "string",
+                        "description": "primary_email"
+                      },
+                      "secondary_emails": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "secondary_emails"
+                      },
+                      "work_phone_number": {
+                        "type": "string",
+                        "description": "work_phone_number"
+                      },
+                      "mobile_phone_number": {
+                        "type": "string",
+                        "description": "mobile_phone_number"
+                      },
+                      "department_ids": {
+                        "type": "array",
+                        "items": {
+                          "type": "integer",
+                          "format": "int32"
+                        },
+                        "description": "department_ids"
+                      },
+                      "can_see_all_tickets_from_associated_departments": {
+                        "type": "boolean",
+                        "description": "can_see_all_tickets_from_associated_departments"
+                      },
+                      "reporting_manager_id": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "reporting_manager_id"
+                      },
+                      "address": {
+                        "type": "string",
+                        "description": "address"
+                      },
+                      "time_zone": {
+                        "type": "string",
+                        "description": "time_zone"
+                      },
+                      "time_format": {
+                        "type": "string",
+                        "description": "time_format"
+                      },
+                      "language": {
+                        "type": "string",
+                        "description": "language"
+                      },
+                      "location_id": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "location_id"
+                      },
+                      "background_information": {
+                        "type": "string",
+                        "description": "background_information"
+                      },
+                      "custom_fields": {
+                        "type": "object",
+                        "properties": {
+                          "quidditch_role": {
+                            "type": "string",
+                            "description": "quidditch_role"
+                          },
+                          "hogsmeade_permission": {
+                            "type": "boolean",
+                            "description": "hogsmeade_permission"
+                          }
+                        },
+                        "description": "custom_fields"
+                      },
+                      "active": {
+                        "type": "boolean",
+                        "description": "active"
+                      },
+                      "has_logged_in": {
+                        "type": "boolean",
+                        "description": "has_logged_in"
+                      }
+                    }
+                  },
+                  "description": "requesters"
+                }
+              }
+            }
+          }
+        },
+        "summary": "List Requesters",
+        "operationId": "requesters-list",
+        "parameters": []
+      }
+    },
+    "/api/v2/requesters/{requester}": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "requester": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "id"
+                    },
+                    "is_agent": {
+                      "type": "boolean",
+                      "description": "is_agent"
+                    },
+                    "first_name": {
+                      "type": "string",
+                      "description": "first_name"
+                    },
+                    "last_name": {
+                      "type": "string",
+                      "description": "last_name"
+                    },
+                    "job_title": {
+                      "type": "string",
+                      "description": "job_title"
+                    },
+                    "primary_email": {
+                      "type": "string",
+                      "description": "primary_email"
+                    },
+                    "secondary_emails": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "secondary_emails"
+                    },
+                    "work_phone_number": {
+                      "type": "string",
+                      "description": "work_phone_number"
+                    },
+                    "mobile_phone_number": {
+                      "type": "string",
+                      "description": "mobile_phone_number"
+                    },
+                    "department_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer",
+                        "format": "int32"
+                      },
+                      "description": "department_ids"
+                    },
+                    "can_see_all_tickets_from_associated_departments": {
+                      "type": "boolean",
+                      "description": "can_see_all_tickets_from_associated_departments"
+                    },
+                    "reporting_manager_id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "reporting_manager_id"
+                    },
+                    "address": {
+                      "type": "string",
+                      "description": "address"
+                    },
+                    "time_zone": {
+                      "type": "string",
+                      "description": "time_zone"
+                    },
+                    "time_format": {
+                      "type": "string",
+                      "description": "time_format"
+                    },
+                    "language": {
+                      "type": "string",
+                      "description": "language"
+                    },
+                    "location_id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "location_id"
+                    },
+                    "background_information": {
+                      "type": "string",
+                      "description": "background_information"
+                    },
+                    "custom_fields": {
+                      "type": "object",
+                      "properties": {
+                        "quidditch_role": {
+                          "type": "string",
+                          "description": "quidditch_role"
+                        },
+                        "hogsmeade_permission": {
+                          "type": "boolean",
+                          "description": "hogsmeade_permission"
+                        }
+                      },
+                      "description": "custom_fields"
+                    },
+                    "active": {
+                      "type": "boolean",
+                      "description": "active"
+                    },
+                    "has_logged_in": {
+                      "type": "boolean",
+                      "description": "has_logged_in"
+                    }
+                  },
+                  "description": "requester"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get Requester",
+        "operationId": "requesters-get",
+        "parameters": [
+          {
+            "name": "requester",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ]
+      }
+    },
+    "/api/v2/tickets": {
+      "post": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "ticket": {
+                  "type": "object",
+                  "properties": {
+                    "cc_emails": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "cc_emails"
+                    },
+                    "fwd_emails": {
+                      "type": "array",
+                      "items": {},
+                      "description": "fwd_emails"
+                    },
+                    "reply_cc_emails": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "reply_cc_emails"
+                    },
+                    "fr_escalated": {
+                      "type": "boolean",
+                      "description": "fr_escalated"
+                    },
+                    "spam": {
+                      "type": "boolean",
+                      "description": "spam"
+                    },
+                    "email_config_id": {
+                      "type": "string",
+                      "description": "email_config_id"
+                    },
+                    "group_id": {
+                      "type": "string",
+                      "description": "group_id"
+                    },
+                    "priority": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "priority"
+                    },
+                    "requester_id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "requester_id"
+                    },
+                    "requested_for_id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "requested_for_id"
+                    },
+                    "responder_id": {
+                      "type": "string",
+                      "description": "responder_id"
+                    },
+                    "source": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "source"
+                    },
+                    "status": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "status"
+                    },
+                    "subject": {
+                      "type": "string",
+                      "description": "subject"
+                    },
+                    "to_emails": {
+                      "type": "string",
+                      "description": "to_emails"
+                    },
+                    "department_id": {
+                      "type": "string",
+                      "description": "department_id"
+                    },
+                    "id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "id"
+                    },
+                    "type": {
+                      "type": "string",
+                      "description": "type"
+                    },
+                    "due_by": {
+                      "type": "string",
+                      "description": "due_by"
+                    },
+                    "fr_due_by": {
+                      "type": "string",
+                      "description": "fr_due_by"
+                    },
+                    "is_escalated": {
+                      "type": "boolean",
+                      "description": "is_escalated"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "description"
+                    },
+                    "description_text": {
+                      "type": "string",
+                      "description": "description_text"
+                    },
+                    "category": {
+                      "type": "string",
+                      "description": "category"
+                    },
+                    "sub_category": {
+                      "type": "string",
+                      "description": "sub_category"
+                    },
+                    "item_category": {
+                      "type": "string",
+                      "description": "item_category"
+                    },
+                    "custom_fields": {
+                      "type": "object",
+                      "properties": {
+                        "auto_checkbox": {
+                          "type": "string",
+                          "description": "auto_checkbox"
+                        }
+                      },
+                      "description": "custom_fields"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "description": "created_at"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "description": "updated_at"
+                    },
+                    "tags": {
+                      "type": "array",
+                      "items": {},
+                      "description": "tags"
+                    },
+                    "attachments": {
+                      "type": "array",
+                      "items": {},
+                      "description": "attachments"
+                    },
+                    "workspace_id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "workspace_id"
+                    }
+                  },
+                  "description": "ticket"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "tickets-create",
+        "summary": "Create Ticket",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string",
+                  "description": "description"
+                },
+                "subject": {
+                  "type": "string",
+                  "description": "subject"
+                },
+                "email": {
+                  "type": "string",
+                  "description": "email"
+                },
+                "priority": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "priority"
+                },
+                "status": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "status"
+                },
+                "cc_emails": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "cc_emails"
+                },
+                "workspace_id": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "workspace_id"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/api/v2/tickets/{ticket}": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "ticket": {
+                  "type": "object",
+                  "properties": {
+                    "cc_emails": {
+                      "type": "array",
+                      "items": {},
+                      "description": "cc_emails"
+                    },
+                    "fwd_emails": {
+                      "type": "array",
+                      "items": {},
+                      "description": "fwd_emails"
+                    },
+                    "reply_cc_emails": {
+                      "type": "array",
+                      "items": {},
+                      "description": "reply_cc_emails"
+                    },
+                    "fr_escalated": {
+                      "type": "boolean",
+                      "description": "fr_escalated"
+                    },
+                    "spam": {
+                      "type": "boolean",
+                      "description": "spam"
+                    },
+                    "email_config_id": {
+                      "type": "string",
+                      "description": "email_config_id"
+                    },
+                    "group_id": {
+                      "type": "string",
+                      "description": "group_id"
+                    },
+                    "priority": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "priority"
+                    },
+                    "requester_id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "requester_id"
+                    },
+                    "requested_for_id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "requested_for_id"
+                    },
+                    "responder_id": {
+                      "type": "string",
+                      "description": "responder_id"
+                    },
+                    "source": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "source"
+                    },
+                    "status": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "status"
+                    },
+                    "subject": {
+                      "type": "string",
+                      "description": "subject"
+                    },
+                    "to_emails": {
+                      "type": "string",
+                      "description": "to_emails"
+                    },
+                    "sla_policy_id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "sla_policy_id"
+                    },
+                    "department_id": {
+                      "type": "string",
+                      "description": "department_id"
+                    },
+                    "id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "id"
+                    },
+                    "type": {
+                      "type": "string",
+                      "description": "type"
+                    },
+                    "due_by": {
+                      "type": "string",
+                      "description": "due_by"
+                    },
+                    "fr_due_by": {
+                      "type": "string",
+                      "description": "fr_due_by"
+                    },
+                    "is_escalated": {
+                      "type": "boolean",
+                      "description": "is_escalated"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "description"
+                    },
+                    "description_text": {
+                      "type": "string",
+                      "description": "description_text"
+                    },
+                    "custom_fields": {
+                      "type": "object",
+                      "properties": {
+                        "custom_text": {
+                          "type": "string",
+                          "description": "custom_text"
+                        },
+                        "auto_checkbox": {
+                          "type": "boolean",
+                          "description": "auto_checkbox"
+                        }
+                      },
+                      "description": "custom_fields"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "description": "created_at"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "description": "updated_at"
+                    },
+                    "urgency": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "urgency"
+                    },
+                    "impact": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "impact"
+                    },
+                    "category": {
+                      "type": "string",
+                      "description": "category"
+                    },
+                    "sub_category": {
+                      "type": "string",
+                      "description": "sub_category"
+                    },
+                    "item_category": {
+                      "type": "string",
+                      "description": "item_category"
+                    },
+                    "deleted": {
+                      "type": "boolean",
+                      "description": "deleted"
+                    },
+                    "attachments": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "content_type": {
+                            "type": "string",
+                            "description": "content_type"
+                          },
+                          "size": {
+                            "type": "integer",
+                            "format": "int32",
+                            "description": "size"
+                          },
+                          "name": {
+                            "type": "string",
+                            "description": "name"
+                          },
+                          "attachment_url": {
+                            "type": "string",
+                            "description": "attachment_url"
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "description": "created_at"
+                          },
+                          "updated_at": {
+                            "type": "string",
+                            "description": "updated_at"
+                          }
+                        }
+                      },
+                      "description": "attachments"
+                    },
+                    "workspace_id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "workspace_id"
+                    },
+                    "created_within_business_hours": {
+                      "type": "boolean",
+                      "description": "created_within_business_hours"
+                    },
+                    "approval_status": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "approval_status"
+                    },
+                    "approval_status_name": {
+                      "type": "string",
+                      "description": "approval_status_name"
+                    }
+                  },
+                  "description": "ticket"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get Ticket",
+        "operationId": "tickets-get",
+        "parameters": [
+          {
+            "name": "ticket",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ]
+      },
+      "delete": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        },
+        "operationId": "ticket-delete",
+        "summary": "Delete ticket",
+        "parameters": [
+          {
+            "name": "ticket",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ]
+      }
+    },
+    "/api/v2/tickets/{ticket}/notes": {
+      "post": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "conversation": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "id"
+                    },
+                    "incoming": {
+                      "type": "boolean",
+                      "description": "incoming"
+                    },
+                    "private": {
+                      "type": "boolean",
+                      "description": "private"
+                    },
+                    "user_id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "user_id"
+                    },
+                    "support_email": {
+                      "type": "string",
+                      "description": "support_email"
+                    },
+                    "body": {
+                      "type": "string",
+                      "description": "body"
+                    },
+                    "body_text": {
+                      "type": "string",
+                      "description": "body_text"
+                    },
+                    "ticket_id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "ticket_id"
+                    },
+                    "to_emails": {
+                      "type": "array",
+                      "items": {},
+                      "description": "to_emails"
+                    },
+                    "attachments": {
+                      "type": "array",
+                      "items": {},
+                      "description": "attachments"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "description": "created_at"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "description": "updated_at"
+                    }
+                  },
+                  "description": "conversation"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Add note to ticket",
+        "operationId": "ticket-note-add",
+        "parameters": [
+          {
+            "name": "ticket",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "body": {
+                  "type": "string",
+                  "description": "body",
+                  "title": "Body",
+                  "format": "html"
+                },
+                "private": {
+                  "type": "boolean",
+                  "description": "private",
+                  "title": "Private",
+                  "enum": [
+                    true,
+                    false
+                  ],
+                  "default": true
+                }
+              },
+              "required": [
+                "body",
+                "private"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/api/v2/tickets/{ticket}/tasks/": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "tasks": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "id"
+                      },
+                      "agent_id": {
+                        "type": "string",
+                        "description": "agent_id"
+                      },
+                      "status": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "status"
+                      },
+                      "due_date": {
+                        "type": "string",
+                        "description": "due_date"
+                      },
+                      "notify_before": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "notify_before"
+                      },
+                      "title": {
+                        "type": "string",
+                        "description": "title"
+                      },
+                      "description": {
+                        "type": "string",
+                        "description": "description"
+                      },
+                      "created_at": {
+                        "type": "string",
+                        "description": "created_at"
+                      },
+                      "updated_at": {
+                        "type": "string",
+                        "description": "updated_at"
+                      },
+                      "closed_at": {
+                        "type": "string",
+                        "description": "closed_at"
+                      },
+                      "group_id": {
+                        "type": "string",
+                        "description": "group_id"
+                      }
+                    }
+                  },
+                  "description": "tasks"
+                }
+              }
+            }
+          }
+        },
+        "summary": "List Tasks",
+        "operationId": "tasks-list",
+        "parameters": [
+          {
+            "name": "ticket",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "description": "Lists only open tasks"
+      }
+    },
+    "/api/v2/tickets/{ticket}/tasks/{task}": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "task": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "id"
+                    },
+                    "agent_id": {
+                      "type": "string",
+                      "description": "agent_id"
+                    },
+                    "status": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "status"
+                    },
+                    "due_date": {
+                      "type": "string",
+                      "description": "due_date"
+                    },
+                    "notify_before": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "notify_before"
+                    },
+                    "title": {
+                      "type": "string",
+                      "description": "title"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "description"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "description": "created_at"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "description": "updated_at"
+                    },
+                    "closed_at": {
+                      "type": "string",
+                      "description": "closed_at"
+                    },
+                    "group_id": {
+                      "type": "string",
+                      "description": "group_id"
+                    }
+                  },
+                  "description": "task"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get Task",
+        "operationId": "tasks-get",
+        "parameters": [
+          {
+            "name": "ticket",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "task",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ]
+      },
+      "delete": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        },
+        "summary": "Delete task",
+        "operationId": "tasks-delete",
+        "parameters": [
+          {
+            "name": "ticket",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "task",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ]
+      },
+      "put": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "task": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "id"
+                    },
+                    "agent_id": {
+                      "type": "string",
+                      "description": "agent_id"
+                    },
+                    "status": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "status"
+                    },
+                    "due_date": {
+                      "type": "string",
+                      "description": "due_date"
+                    },
+                    "notify_before": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "notify_before"
+                    },
+                    "title": {
+                      "type": "string",
+                      "description": "title"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "description"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "description": "created_at"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "description": "updated_at"
+                    },
+                    "closed_at": {
+                      "type": "string",
+                      "description": "closed_at"
+                    },
+                    "group_id": {
+                      "type": "string",
+                      "description": "group_id"
+                    }
+                  },
+                  "description": "task"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Update Task",
+        "operationId": "tasks-update",
+        "parameters": [
+          {
+            "name": "ticket",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "task",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "status"
+                },
+                "notify_before": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "notify_before"
+                },
+                "title": {
+                  "type": "string",
+                  "description": "title"
+                },
+                "description": {
+                  "type": "string",
+                  "description": "description"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/api/v2/departments": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "departments": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "id"
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "name"
+                      },
+                      "description": {
+                        "type": "string",
+                        "description": "description"
+                      },
+                      "head_user_id": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "head_user_id"
+                      },
+                      "prime_user_id": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "prime_user_id"
+                      },
+                      "domains": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "domains"
+                      },
+                      "custom_fields": {
+                        "type": "object",
+                        "properties": {
+                          "location": {
+                            "type": "string",
+                            "description": "location"
+                          }
+                        },
+                        "description": "custom_fields"
+                      },
+                      "created_at": {
+                        "type": "string",
+                        "description": "created_at"
+                      },
+                      "updated_at": {
+                        "type": "string",
+                        "description": "updated_at"
+                      }
+                    }
+                  },
+                  "description": "departments"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "departments-list",
+        "summary": "List departments",
+        "parameters": []
+      }
+    },
+    "/api/v2/groups": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "groups": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "id"
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "name"
+                      },
+                      "description": {
+                        "type": "string",
+                        "description": "description"
+                      },
+                      "business_hours_id": {
+                        "type": "string",
+                        "description": "business_hours_id"
+                      },
+                      "escalate_to": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "escalate_to"
+                      },
+                      "unassigned_for": {
+                        "type": "string",
+                        "description": "unassigned_for"
+                      },
+                      "agent_ids": {
+                        "type": "array",
+                        "items": {
+                          "type": "integer",
+                          "format": "int32"
+                        },
+                        "description": "agent_ids"
+                      },
+                      "members": {
+                        "type": "array",
+                        "items": {
+                          "type": "integer",
+                          "format": "int32"
+                        },
+                        "description": "members"
+                      },
+                      "observers": {
+                        "type": "array",
+                        "items": {
+                          "type": "integer",
+                          "format": "int32"
+                        },
+                        "description": "observers"
+                      },
+                      "restricted": {
+                        "type": "boolean",
+                        "description": "restricted"
+                      },
+                      "approval_required": {
+                        "type": "boolean",
+                        "description": "approval_required"
+                      },
+                      "leaders": {
+                        "type": "array",
+                        "items": {},
+                        "description": "leaders"
+                      },
+                      "members_pending_approval": {
+                        "type": "array",
+                        "items": {},
+                        "description": "members_pending_approval"
+                      },
+                      "leaders_pending_approval": {
+                        "type": "array",
+                        "items": {},
+                        "description": "leaders_pending_approval"
+                      },
+                      "observers_pending_approval": {
+                        "type": "array",
+                        "items": {},
+                        "description": "observers_pending_approval"
+                      },
+                      "auto_ticket_assign": {
+                        "type": "boolean",
+                        "description": "auto_ticket_assign"
+                      },
+                      "created_at": {
+                        "type": "string",
+                        "description": "created_at"
+                      },
+                      "updated_at": {
+                        "type": "string",
+                        "description": "updated_at"
+                      },
+                      "group": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer",
+                            "format": "int32",
+                            "description": "id"
+                          },
+                          "name": {
+                            "type": "string",
+                            "description": "name"
+                          },
+                          "description": {
+                            "type": "string",
+                            "description": "description"
+                          },
+                          "escalate_to": {
+                            "type": "string",
+                            "description": "escalate_to"
+                          },
+                          "unassigned_for": {
+                            "type": "string",
+                            "description": "unassigned_for"
+                          },
+                          "business_hours_id": {
+                            "type": "string",
+                            "description": "business_hours_id"
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "description": "created_at"
+                          },
+                          "updated_at": {
+                            "type": "string",
+                            "description": "updated_at"
+                          },
+                          "auto_ticket_assign": {
+                            "type": "boolean",
+                            "description": "auto_ticket_assign"
+                          },
+                          "restricted": {
+                            "type": "boolean",
+                            "description": "restricted"
+                          },
+                          "approval_required": {
+                            "type": "boolean",
+                            "description": "approval_required"
+                          },
+                          "agent_ids": {
+                            "type": "array",
+                            "items": {
+                              "type": "integer",
+                              "format": "int32"
+                            },
+                            "description": "agent_ids"
+                          },
+                          "members": {
+                            "type": "array",
+                            "items": {
+                              "type": "integer",
+                              "format": "int32"
+                            },
+                            "description": "members"
+                          },
+                          "observers": {
+                            "type": "array",
+                            "items": {},
+                            "description": "observers"
+                          },
+                          "leaders": {
+                            "type": "array",
+                            "items": {
+                              "type": "integer",
+                              "format": "int32"
+                            },
+                            "description": "leaders"
+                          },
+                          "members_pending_approval": {
+                            "type": "array",
+                            "items": {
+                              "type": "integer",
+                              "format": "int32"
+                            },
+                            "description": "members_pending_approval"
+                          },
+                          "leaders_pending_approval": {
+                            "type": "array",
+                            "items": {},
+                            "description": "leaders_pending_approval"
+                          },
+                          "observers_pending_approval": {
+                            "type": "array",
+                            "items": {},
+                            "description": "observers_pending_approval"
+                          }
+                        },
+                        "description": "group"
+                      }
+                    }
+                  },
+                  "description": "groups"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "agents-groups-list",
+        "summary": "List agent groups",
+        "parameters": []
+      }
+    },
+    "/api/v2/groups/{group}": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "group": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "id"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "name"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "description"
+                    },
+                    "escalate_to": {
+                      "type": "string",
+                      "description": "escalate_to"
+                    },
+                    "unassigned_for": {
+                      "type": "string",
+                      "description": "unassigned_for"
+                    },
+                    "business_hours_id": {
+                      "type": "string",
+                      "description": "business_hours_id"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "description": "created_at"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "description": "updated_at"
+                    },
+                    "auto_ticket_assign": {
+                      "type": "boolean",
+                      "description": "auto_ticket_assign"
+                    },
+                    "restricted": {
+                      "type": "boolean",
+                      "description": "restricted"
+                    },
+                    "approval_required": {
+                      "type": "boolean",
+                      "description": "approval_required"
+                    },
+                    "agent_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer",
+                        "format": "int32"
+                      },
+                      "description": "agent_ids"
+                    },
+                    "members": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer",
+                        "format": "int32"
+                      },
+                      "description": "members"
+                    },
+                    "observers": {
+                      "type": "array",
+                      "items": {},
+                      "description": "observers"
+                    },
+                    "leaders": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer",
+                        "format": "int32"
+                      },
+                      "description": "leaders"
+                    },
+                    "members_pending_approval": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer",
+                        "format": "int32"
+                      },
+                      "description": "members_pending_approval"
+                    },
+                    "leaders_pending_approval": {
+                      "type": "array",
+                      "items": {},
+                      "description": "leaders_pending_approval"
+                    },
+                    "observers_pending_approval": {
+                      "type": "array",
+                      "items": {},
+                      "description": "observers_pending_approval"
+                    }
+                  },
+                  "description": "group"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get agent group",
+        "operationId": "agents-groups-get",
+        "parameters": [
+          {
+            "name": "group",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "basic-auth": {
+      "type": "basic"
+    }
+  },
+  "security": [
+    {
+      "basic-auth": []
+    }
+  ],
+  "tags": []
+}
