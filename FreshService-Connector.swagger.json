@@ -28,7 +28,7 @@
                     "properties": {
                       "id": {
                         "type": "integer",
-                        "format": "int32",
+                        "format": "int64",
                         "description": "id"
                       },
                       "first_name": {
@@ -67,7 +67,7 @@
                         "type": "array",
                         "items": {
                           "type": "integer",
-                          "format": "int32"
+                          "format": "int64"
                         },
                         "description": "department_ids"
                       },
@@ -77,7 +77,7 @@
                       },
                       "reporting_manager_id": {
                         "type": "integer",
-                        "format": "int32",
+                        "format": "int64",
                         "description": "reporting_manager_id"
                       },
                       "address": {
@@ -98,7 +98,7 @@
                       },
                       "location_id": {
                         "type": "integer",
-                        "format": "int32",
+                        "format": "int64",
                         "description": "location_id"
                       },
                       "background_information": {
@@ -107,7 +107,7 @@
                       },
                       "scoreboard_level_id": {
                         "type": "integer",
-                        "format": "int32",
+                        "format": "int64",
                         "description": "scoreboard_level_id"
                       },
                       "scopes": {
@@ -128,7 +128,7 @@
                         "type": "array",
                         "items": {
                           "type": "integer",
-                          "format": "int32"
+                          "format": "int64"
                         },
                         "description": "group_ids"
                       },
@@ -136,7 +136,7 @@
                         "type": "array",
                         "items": {
                           "type": "integer",
-                          "format": "int32"
+                          "format": "int64"
                         },
                         "description": "member_of"
                       },
@@ -144,7 +144,7 @@
                         "type": "array",
                         "items": {
                           "type": "integer",
-                          "format": "int32"
+                          "format": "int64"
                         },
                         "description": "observer_of"
                       },
@@ -162,7 +162,7 @@
                         "type": "array",
                         "items": {
                           "type": "integer",
-                          "format": "int32"
+                          "format": "int64"
                         },
                         "description": "role_ids"
                       },
@@ -173,7 +173,7 @@
                           "properties": {
                             "role_id": {
                               "type": "integer",
-                              "format": "int32",
+                              "format": "int64",
                               "description": "role_id"
                             },
                             "assignment_scope": {
@@ -184,7 +184,7 @@
                               "type": "array",
                               "items": {
                                 "type": "integer",
-                                "format": "int32"
+                                "format": "int64"
                               },
                               "description": "groups"
                             }
@@ -250,7 +250,7 @@
               "value-collection": "agents",
               "value-title": "email"
             },
-            "format": "int32"
+            "format": "int64"
           }
         ]
       }
@@ -270,7 +270,7 @@
                     "properties": {
                       "id": {
                         "type": "integer",
-                        "format": "int32",
+                        "format": "int64",
                         "description": "id"
                       },
                       "is_agent": {
@@ -312,7 +312,7 @@
                         "type": "array",
                         "items": {
                           "type": "integer",
-                          "format": "int32"
+                          "format": "int64"
                         },
                         "description": "department_ids"
                       },
@@ -322,7 +322,7 @@
                       },
                       "reporting_manager_id": {
                         "type": "integer",
-                        "format": "int32",
+                        "format": "int64",
                         "description": "reporting_manager_id"
                       },
                       "address": {
@@ -343,7 +343,7 @@
                       },
                       "location_id": {
                         "type": "integer",
-                        "format": "int32",
+                        "format": "int64",
                         "description": "location_id"
                       },
                       "background_information": {
@@ -382,7 +382,38 @@
         },
         "summary": "List Requesters",
         "operationId": "requesters-list",
-        "parameters": []
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Emailaddress"
+          },
+          {
+            "name": "include_agents",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "default": true
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "default": 100,
+            "description": "Results per page",
+            "enum": [
+              1,
+              10,
+              25,
+              50,
+              75,
+              100
+            ]
+          }
+        ]
       }
     },
     "/api/v2/requesters/{requester}": {
@@ -398,7 +429,7 @@
                   "properties": {
                     "id": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "id"
                     },
                     "is_agent": {
@@ -440,7 +471,7 @@
                       "type": "array",
                       "items": {
                         "type": "integer",
-                        "format": "int32"
+                        "format": "int64"
                       },
                       "description": "department_ids"
                     },
@@ -450,7 +481,7 @@
                     },
                     "reporting_manager_id": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "reporting_manager_id"
                     },
                     "address": {
@@ -471,7 +502,7 @@
                     },
                     "location_id": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "location_id"
                     },
                     "background_information": {
@@ -515,7 +546,7 @@
             "in": "path",
             "required": true,
             "type": "integer",
-            "format": "int32"
+            "format": "int64"
           }
         ]
       }
@@ -568,17 +599,17 @@
                     },
                     "priority": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "priority"
                     },
                     "requester_id": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "requester_id"
                     },
                     "requested_for_id": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "requested_for_id"
                     },
                     "responder_id": {
@@ -587,12 +618,12 @@
                     },
                     "source": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "source"
                     },
                     "status": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "status"
                     },
                     "subject": {
@@ -609,7 +640,7 @@
                     },
                     "id": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "id"
                     },
                     "type": {
@@ -678,7 +709,7 @@
                     },
                     "workspace_id": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "workspace_id"
                     }
                   },
@@ -712,12 +743,12 @@
                 },
                 "priority": {
                   "type": "integer",
-                  "format": "int32",
+                  "format": "int64",
                   "description": "priority"
                 },
                 "status": {
                   "type": "integer",
-                  "format": "int32",
+                  "format": "int64",
                   "description": "status"
                 },
                 "cc_emails": {
@@ -729,7 +760,7 @@
                 },
                 "workspace_id": {
                   "type": "integer",
-                  "format": "int32",
+                  "format": "int64",
                   "description": "workspace_id"
                 }
               }
@@ -739,6 +770,25 @@
       }
     },
     "/api/v2/tickets/{ticket}": {
+      "delete": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        },
+        "operationId": "ticket-delete",
+        "summary": "Delete ticket",
+        "parameters": [
+          {
+            "name": "ticket",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ]
+      },
       "get": {
         "responses": {
           "default": {
@@ -782,17 +832,17 @@
                     },
                     "priority": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "priority"
                     },
                     "requester_id": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "requester_id"
                     },
                     "requested_for_id": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "requested_for_id"
                     },
                     "responder_id": {
@@ -801,12 +851,12 @@
                     },
                     "source": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "source"
                     },
                     "status": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "status"
                     },
                     "subject": {
@@ -819,7 +869,7 @@
                     },
                     "sla_policy_id": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "sla_policy_id"
                     },
                     "department_id": {
@@ -828,7 +878,7 @@
                     },
                     "id": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "id"
                     },
                     "type": {
@@ -879,12 +929,12 @@
                     },
                     "urgency": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "urgency"
                     },
                     "impact": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "impact"
                     },
                     "category": {
@@ -914,7 +964,7 @@
                           },
                           "size": {
                             "type": "integer",
-                            "format": "int32",
+                            "format": "int64",
                             "description": "size"
                           },
                           "name": {
@@ -939,7 +989,7 @@
                     },
                     "workspace_id": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "workspace_id"
                     },
                     "created_within_business_hours": {
@@ -948,7 +998,7 @@
                     },
                     "approval_status": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "approval_status"
                     },
                     "approval_status_name": {
@@ -970,26 +1020,7 @@
             "in": "path",
             "required": true,
             "type": "integer",
-            "format": "int32"
-          }
-        ]
-      },
-      "delete": {
-        "responses": {
-          "default": {
-            "description": "default",
-            "schema": {}
-          }
-        },
-        "operationId": "ticket-delete",
-        "summary": "Delete ticket",
-        "parameters": [
-          {
-            "name": "ticket",
-            "in": "path",
-            "required": true,
-            "type": "integer",
-            "format": "int32"
+            "format": "int64"
           }
         ]
       }
@@ -1007,7 +1038,7 @@
                   "properties": {
                     "id": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "id"
                     },
                     "incoming": {
@@ -1020,7 +1051,7 @@
                     },
                     "user_id": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "user_id"
                     },
                     "support_email": {
@@ -1037,7 +1068,7 @@
                     },
                     "ticket_id": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "ticket_id"
                     },
                     "to_emails": {
@@ -1073,7 +1104,7 @@
             "in": "path",
             "required": true,
             "type": "integer",
-            "format": "int32"
+            "format": "int64"
           },
           {
             "name": "body",
@@ -1123,7 +1154,7 @@
                     "properties": {
                       "id": {
                         "type": "integer",
-                        "format": "int32",
+                        "format": "int64",
                         "description": "id"
                       },
                       "agent_id": {
@@ -1132,7 +1163,7 @@
                       },
                       "status": {
                         "type": "integer",
-                        "format": "int32",
+                        "format": "int64",
                         "description": "status"
                       },
                       "due_date": {
@@ -1141,7 +1172,7 @@
                       },
                       "notify_before": {
                         "type": "integer",
-                        "format": "int32",
+                        "format": "int64",
                         "description": "notify_before"
                       },
                       "title": {
@@ -1184,13 +1215,39 @@
             "in": "path",
             "required": true,
             "type": "integer",
-            "format": "int32"
+            "format": "int64"
           }
         ],
         "description": "Lists only open tasks"
       }
     },
     "/api/v2/tickets/{ticket}/tasks/{task}": {
+      "delete": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        },
+        "summary": "Delete task",
+        "operationId": "tasks-delete",
+        "parameters": [
+          {
+            "name": "ticket",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "task",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ]
+      },
       "get": {
         "responses": {
           "default": {
@@ -1203,7 +1260,7 @@
                   "properties": {
                     "id": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "id"
                     },
                     "agent_id": {
@@ -1212,7 +1269,7 @@
                     },
                     "status": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "status"
                     },
                     "due_date": {
@@ -1221,7 +1278,7 @@
                     },
                     "notify_before": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "notify_before"
                     },
                     "title": {
@@ -1263,40 +1320,14 @@
             "in": "path",
             "required": true,
             "type": "integer",
-            "format": "int32"
+            "format": "int64"
           },
           {
             "name": "task",
             "in": "path",
             "required": true,
             "type": "integer",
-            "format": "int32"
-          }
-        ]
-      },
-      "delete": {
-        "responses": {
-          "default": {
-            "description": "default",
-            "schema": {}
-          }
-        },
-        "summary": "Delete task",
-        "operationId": "tasks-delete",
-        "parameters": [
-          {
-            "name": "ticket",
-            "in": "path",
-            "required": true,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "task",
-            "in": "path",
-            "required": true,
-            "type": "integer",
-            "format": "int32"
+            "format": "int64"
           }
         ]
       },
@@ -1312,7 +1343,7 @@
                   "properties": {
                     "id": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "id"
                     },
                     "agent_id": {
@@ -1321,7 +1352,7 @@
                     },
                     "status": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "status"
                     },
                     "due_date": {
@@ -1330,7 +1361,7 @@
                     },
                     "notify_before": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "notify_before"
                     },
                     "title": {
@@ -1372,14 +1403,14 @@
             "in": "path",
             "required": true,
             "type": "integer",
-            "format": "int32"
+            "format": "int64"
           },
           {
             "name": "task",
             "in": "path",
             "required": true,
             "type": "integer",
-            "format": "int32"
+            "format": "int64"
           },
           {
             "name": "body",
@@ -1390,12 +1421,12 @@
               "properties": {
                 "status": {
                   "type": "integer",
-                  "format": "int32",
+                  "format": "int64",
                   "description": "status"
                 },
                 "notify_before": {
                   "type": "integer",
-                  "format": "int32",
+                  "format": "int64",
                   "description": "notify_before"
                 },
                 "title": {
@@ -1427,7 +1458,7 @@
                     "properties": {
                       "id": {
                         "type": "integer",
-                        "format": "int32",
+                        "format": "int64",
                         "description": "id"
                       },
                       "name": {
@@ -1440,12 +1471,12 @@
                       },
                       "head_user_id": {
                         "type": "integer",
-                        "format": "int32",
+                        "format": "int64",
                         "description": "head_user_id"
                       },
                       "prime_user_id": {
                         "type": "integer",
-                        "format": "int32",
+                        "format": "int64",
                         "description": "prime_user_id"
                       },
                       "domains": {
@@ -1501,7 +1532,7 @@
                     "properties": {
                       "id": {
                         "type": "integer",
-                        "format": "int32",
+                        "format": "int64",
                         "description": "id"
                       },
                       "name": {
@@ -1518,7 +1549,7 @@
                       },
                       "escalate_to": {
                         "type": "integer",
-                        "format": "int32",
+                        "format": "int64",
                         "description": "escalate_to"
                       },
                       "unassigned_for": {
@@ -1529,7 +1560,7 @@
                         "type": "array",
                         "items": {
                           "type": "integer",
-                          "format": "int32"
+                          "format": "int64"
                         },
                         "description": "agent_ids"
                       },
@@ -1537,7 +1568,7 @@
                         "type": "array",
                         "items": {
                           "type": "integer",
-                          "format": "int32"
+                          "format": "int64"
                         },
                         "description": "members"
                       },
@@ -1545,7 +1576,7 @@
                         "type": "array",
                         "items": {
                           "type": "integer",
-                          "format": "int32"
+                          "format": "int64"
                         },
                         "description": "observers"
                       },
@@ -1594,7 +1625,7 @@
                         "properties": {
                           "id": {
                             "type": "integer",
-                            "format": "int32",
+                            "format": "int64",
                             "description": "id"
                           },
                           "name": {
@@ -1641,7 +1672,7 @@
                             "type": "array",
                             "items": {
                               "type": "integer",
-                              "format": "int32"
+                              "format": "int64"
                             },
                             "description": "agent_ids"
                           },
@@ -1649,7 +1680,7 @@
                             "type": "array",
                             "items": {
                               "type": "integer",
-                              "format": "int32"
+                              "format": "int64"
                             },
                             "description": "members"
                           },
@@ -1662,7 +1693,7 @@
                             "type": "array",
                             "items": {
                               "type": "integer",
-                              "format": "int32"
+                              "format": "int64"
                             },
                             "description": "leaders"
                           },
@@ -1670,7 +1701,7 @@
                             "type": "array",
                             "items": {
                               "type": "integer",
-                              "format": "int32"
+                              "format": "int64"
                             },
                             "description": "members_pending_approval"
                           },
@@ -1713,7 +1744,7 @@
                   "properties": {
                     "id": {
                       "type": "integer",
-                      "format": "int32",
+                      "format": "int64",
                       "description": "id"
                     },
                     "name": {
@@ -1760,7 +1791,7 @@
                       "type": "array",
                       "items": {
                         "type": "integer",
-                        "format": "int32"
+                        "format": "int64"
                       },
                       "description": "agent_ids"
                     },
@@ -1768,7 +1799,7 @@
                       "type": "array",
                       "items": {
                         "type": "integer",
-                        "format": "int32"
+                        "format": "int64"
                       },
                       "description": "members"
                     },
@@ -1781,7 +1812,7 @@
                       "type": "array",
                       "items": {
                         "type": "integer",
-                        "format": "int32"
+                        "format": "int64"
                       },
                       "description": "leaders"
                     },
@@ -1789,7 +1820,7 @@
                       "type": "array",
                       "items": {
                         "type": "integer",
-                        "format": "int32"
+                        "format": "int64"
                       },
                       "description": "members_pending_approval"
                     },
@@ -1818,7 +1849,164 @@
             "in": "path",
             "required": true,
             "type": "integer",
-            "format": "int32"
+            "format": "int64"
+          }
+        ]
+      }
+    },
+    "/api/v2/requesters/{requester_id}": {
+      "put": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "requester": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "format": "int64",
+                      "description": "id"
+                    },
+                    "is_agent": {
+                      "type": "boolean",
+                      "description": "is_agent"
+                    },
+                    "first_name": {
+                      "type": "string",
+                      "description": "first_name"
+                    },
+                    "last_name": {
+                      "type": "string",
+                      "description": "last_name"
+                    },
+                    "job_title": {
+                      "type": "string",
+                      "description": "job_title"
+                    },
+                    "primary_email": {
+                      "type": "string",
+                      "description": "primary_email"
+                    },
+                    "secondary_emails": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "secondary_emails"
+                    },
+                    "work_phone_number": {
+                      "type": "string",
+                      "description": "work_phone_number"
+                    },
+                    "mobile_phone_number": {
+                      "type": "string",
+                      "description": "mobile_phone_number"
+                    },
+                    "department_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer",
+                        "format": "int64"
+                      },
+                      "description": "department_ids"
+                    },
+                    "can_see_all_tickets_from_associated_departments": {
+                      "type": "boolean",
+                      "description": "can_see_all_tickets_from_associated_departments"
+                    },
+                    "reporting_manager_id": {
+                      "type": "integer",
+                      "format": "int64",
+                      "description": "reporting_manager_id"
+                    },
+                    "address": {
+                      "type": "string",
+                      "description": "address"
+                    },
+                    "time_zone": {
+                      "type": "string",
+                      "description": "time_zone"
+                    },
+                    "time_format": {
+                      "type": "string",
+                      "description": "time_format"
+                    },
+                    "language": {
+                      "type": "string",
+                      "description": "language"
+                    },
+                    "location_id": {
+                      "type": "integer",
+                      "format": "int64",
+                      "description": "location_id"
+                    },
+                    "background_information": {
+                      "type": "string",
+                      "description": "background_information"
+                    },
+                    "custom_fields": {
+                      "type": "object",
+                      "properties": {
+                        "quidditch_role": {
+                          "type": "string",
+                          "description": "quidditch_role"
+                        },
+                        "hogsmeade_permission": {
+                          "type": "boolean",
+                          "description": "hogsmeade_permission"
+                        }
+                      },
+                      "description": "custom_fields"
+                    },
+                    "active": {
+                      "type": "boolean",
+                      "description": "active"
+                    },
+                    "has_logged_in": {
+                      "type": "boolean",
+                      "description": "has_logged_in"
+                    }
+                  },
+                  "description": "requester"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Update requester",
+        "operationId": "requesters-update",
+        "parameters": [
+          {
+            "name": "requester_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "first_name": {
+                  "type": "string",
+                  "description": "first_name"
+                },
+                "last_name": {
+                  "type": "string",
+                  "description": "last_name"
+                },
+                "job_title": {
+                  "type": "string",
+                  "description": "job_title"
+                }
+              }
+            }
           }
         ]
       }
